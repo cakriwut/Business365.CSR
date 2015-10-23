@@ -1,0 +1,29 @@
+{
+  "name": "Demo-Deepdive-CSR",
+  "description": "Demo O365 Business",
+  "main": "",
+  "moduleType": [
+    "global"
+  ],
+  "keywords": [
+    "SharePoint",
+    "JQuery",
+    "Template"
+  ],
+  "authors": [
+    "Riwut Libinuko"
+  ],
+  "license": "MIT",
+  "homepage": "http://blog.libinuko.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "handlebars": "~4.0.3",
+    "q": "1.0.1",
+    "nanobar": "~0.2.0"
+  }
+}

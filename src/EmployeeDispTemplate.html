@@ -1,0 +1,24 @@
+<script type="text/html" id="EmployeeVCard">
+<!-- Rendering Template EmployeeVCard -->
+    <table>
+		<tr>
+			<td style='vertical-align:top;'>
+               {{#if Attachments.Attachments}}
+				    <img src='{{Attachments.UrlPrefix}}{{Attachments.Attachments.0.FileName}}' style='width:200px;length:340px'/>
+			   {{else}}
+			    	<img src='/SiteAssets/empty-profile.png' style='width:200px;length:340px'/>
+			   {{/if}}
+			</td>
+			<td style='vertical-align:top;'>
+				<table>
+					<tr><td><b>Employee ID </b></td><td>: {{Title}}</td></tr>
+					<tr><td><b>Fullname </b></td><td>: {{Fullname}}</td></tr>
+					<tr><td><b>NRIC/FIN </b></td><td>: {{IC}}</td></tr>
+					<tr><td><b>Short profile <b/></td><td>&nbsp;</td></tr>
+					<tr><td colspan='2'> {{{ShortProfile}}}</td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+</script>
