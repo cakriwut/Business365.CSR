@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+var currentItemDisplayForm = ctx.displayFormUrl + "&amp;ID=" + ctx.CurrentItem.ID + "&amp;ContentTypeID=" + ctx.CurrentItem.ContentTypeId + "&amp;Source=" + window.location.href;
+var html =  '<a class="ms-listlink" onfocus="OnLink(this)" href="' + currentItemDisplayForm + '" onclick="EditLink2(this,0);return false;" target="_blank">' + ctx.CurrentItem.Title + '</a><span class="ms-newdocument-iconouter"><img class="ms-newdocument-icon" src="/_layouts/15/images/spcommon.png?rev=23" alt="new" title="new"></span>';
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>currentItemDisplayForm</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope> 
+</snippet>

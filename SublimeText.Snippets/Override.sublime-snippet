@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+function Override() {
+	var overrideContext = {};
+	overrideContext.ListTemplateType = 100;
+	overrideContext.Templates = {}
+	overrideContext.Templates.Fields = {
+	    "fieldInternal": {
+	        "NewForm": fieldCreate,
+	        "EditForm": fieldUpdate,
+	        "DisplayForm": fieldDisplay,
+	        "View": fieldView
+	    }
+	};
+
+	overrideContext.Templates.Item = item;
+	overrideContext.Templates.Header = header;
+	overrideContext.Templates.Footer = footer;
+	overrideContext.Templates.OnPostRender = postRender;
+	overrideContext.Templates.OnPreRender = preRender;
+	SPClientTemplates.TemplateManager.RegisterTemplateOverrides(overrideContext);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>function Override</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope> 
+</snippet>
+

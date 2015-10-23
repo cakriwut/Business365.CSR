@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+// Field validator - ${1:ValidatorName}
+ ${1:ValidatorName} = function(args) {
+	 ${1:ValidatorName}.prototype.Validate = function (value) {
+	    var errorMessage = "${2:ErrorMessage}";
+		var isError = false;
+	    // Put validation logic here
+
+	    return new SPClientForms.ClientValidation.ValidationResult(isError, errorMessage);
+	}
+} 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fieldValidator</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

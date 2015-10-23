@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+/*
+  Input parameters:
+  ${1:/Path/To/Template} , a file that contains Mustache template 
+  ${2:templateId} , template element ID 
+  ${3:placeholderId} , placeholder to render with the result
+*/
+function itemTemplate(ctx)
+{  
+   if(ctx.CurrentItemIdx == 0)
+   {
+       \$.get('${1:/Path/To/Template}')
+       .then(function(data){
+          var template = \$(data).filter('#${2:templateId}').html();
+
+          var htmlRender = Mustache.to_html(template,ctx.ListData.Row);
+          \$('#${3:placeholderId}').closest("tr").replaceWith(htmlRender);
+       });
+       return "<tbody><tr><td><div id='${3:placeholderId}'></div></td></tr></tbody>";
+   }
+   return "";
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>itemTemplateMustache</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope> 
+</snippet>

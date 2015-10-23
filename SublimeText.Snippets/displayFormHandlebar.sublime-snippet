@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+\$.get('${1:DisplayTemplate}')
+   .then(function(data) {
+   	  var source = \$(data).filter("${2:Selector}").html();
+   	  var template = Handlebars.compile(source);
+   	  var html = template(WPQ2FormCtx.ListData);
+
+   	   \$("table.ms-formtable").replaceWith(html);
+   });
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>displayFormHandlebar</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+ formCtx = SPClientTemplates.Utility.GetFormContextForCurrentField(ctx);
+var fieldId = formCtx.fieldSchema.Id;
+var fieldName = formCtx.fieldSchema.Name;
+var fieldTitle = formCtx.fieldSchema.Title;
+var uniqueID = fieldName + "_" + fieldId;
+
+var itemID = formCtx.itemAttributes.Id;
+var itemValue = formCtx.fieldValue || "";
+
+var resultCallback = function () {
+    return \$("#" + uniqueID).val();
+}
+
+var validationCallback = function (errorResult) {
+    SPFormControl_AppendValidationErrorMessage(uniqueID + '_validation', errorResult);
+}
+
+fldSetup(formCtx, resultCallback, validationCallback, null);
+
+var inputHTML = '<input id="' + uniqueID + '" type="text" value="' + itemValue + '" title="' + fieldTitle + '" class="ms-long ms-spellcheck-true" />';
+inputHTML += "<div id='" + uniqueID + "_validation'></div>";
+
+return inputHTML;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>formCtx</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

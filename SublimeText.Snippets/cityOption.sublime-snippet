@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+var inputHTML = "<select id='" + uniqueID + "'  title='" + fieldTitle + "' />";
+   inputHTML += "</select>";
+   inputHTML += "<input type='hidden' id='${1:hiddenInputID}' value='" + uniqueID + "' />";
+   inputHTML += "<div id='" + uniqueID + "_validation'></div>";
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cityOption</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+ var html = '<div style="background: #F3F3F3; display:block;">';
+html += '<div style="background: #0072C6; height: 100%; width:'+${1:fieldValue}.replace(/ /g,"")+';">&nbsp;';
+html += '</div>'+${1:fieldValue}+'</div>';
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>percentCompleteView</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

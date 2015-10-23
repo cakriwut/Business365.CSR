@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[
+var image = "/SiteAssets/empty-profile.png";
+
+	if(WPQ2FormCtx.ListData.Attachments != "") {
+		if(WPQ2FormCtx.ListData.Attachments.Attachments.length > 0) {
+		   image = WPQ2FormCtx.ListData.Attachments.UrlPrefix + WPQ2FormCtx.ListData.Attachments.Attachments[0].FileName ;
+	    }
+	} 
+
+	var html = "<table>";
+	html += "<tr>";
+	html += "<td style='vertical-align:top;'>";
+	html +=  "<img src='" + image + "' style='width:200px;length:340px'/>";
+	html += "</td>";
+	html += "<td style='vertical-align:top;'>";
+	html += "<table>";
+	html += "<tr><td><b>Employee ID </b></td><td>: " + WPQ2FormCtx.ListData["Title"]  +"</td></tr>";
+	html += "<tr><td><b>Fullname </b></td><td>: " + WPQ2FormCtx.ListData["Fullname"]  +"</td></tr>";
+	html += "<tr><td><b>NRIC/FIN </b></td><td>: " + WPQ2FormCtx.ListData["IC"]  +"</td></tr>";
+	html += "<tr><td><b>Short profile <b/></td><td>&nbsp;</td></tr>";
+	html += "<tr><td colspan='2'> "+ WPQ2FormCtx.ListData["ShortProfile"] + "</td></tr>";
+	html += "</table>";
+	html += "</td>";
+	html += "</tr>";
+	html += "</table>";
+
+	return html;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>displayFormGetHtml</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

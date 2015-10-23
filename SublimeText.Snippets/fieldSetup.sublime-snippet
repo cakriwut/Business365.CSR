@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+function fldSetup(formCtx, resultCallback, validationCallback, validators) {
+
+    // Register result callback
+    formCtx.registerGetValueCallback(formCtx.fieldName, resultCallback);
+
+    // Register validator
+    var validatorSet = new SPClientForms.ClientValidation.ValidatorSet();
+
+    if (formCtx.fieldSchema.Required) {
+        validatorSet.RegisterValidator(new SPClientForms.ClientValidation.RequiredValidator());
+    }
+
+    if (validators != null) {
+        if (validators.length > 0) {
+            \$.each(validators, function (index, value) {
+                validatorSet.RegisterValidator(value);
+            });
+        }
+    }
+
+    if (validatorSet._registeredValidators.length > 0)
+        formCtx.registerClientValidator(formCtx.fieldName, validatorSet);
+
+    formCtx.registerValidationErrorCallback(formCtx.fieldName, validationCallback);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>function fldSetup</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope> 
+</snippet>

@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+// Starts ${1:fieldInternal} override implementation
+function ${1:fieldInternal}CreateOrUpdate(ctx) {
+   // var formCtx = SPClientTemplates.Utility.GetFormContextForCurrentField(ctx);
+    return "${1:fieldInternal} CreateOfUpdate";
+}
+
+function ${1:fieldInternal}Display(ctx) {
+   // var formCtx = SPClientTemplates.Utility.GetFormContextForCurrentField(ctx);
+    return "${1:fieldInternal} Display";
+}
+
+function ${1:fieldInternal}View(ctx) {
+    //var currentItemDisplayForm
+    
+    var itemValue = ctx.CurrentItem.${1:fieldInternal}
+    return "${1:fieldInternal} View";
+}
+// Ends ${1:fieldInternal} override implementation
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fieldOverride</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope> 
+</snippet>

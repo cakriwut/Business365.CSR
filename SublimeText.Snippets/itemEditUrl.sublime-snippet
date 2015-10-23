@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+var currentItemEditForm = ctx.editFormUrl + "&amp;ID=" + ctx.CurrentItem.ID + "&amp;ContentTypeID=" + ctx.CurrentItem.ContentTypeId + "&amp;Source=" + window.location.href;
+
+var html = '<img class="imgedit" style="cursor:pointer; height: 15px;" src="/_layouts/15/edit.png" onclick=\'window.location.href="' + currentItemEditForm + '";\' title="Edit"/></a>&nbsp;&nbsp;';
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>function Override</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope> 
+</snippet>
+
+
+ 

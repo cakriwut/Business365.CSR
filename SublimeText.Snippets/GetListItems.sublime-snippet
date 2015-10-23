@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+// GetListItems promise
+function GetListItems(listTitle, oSPCamlQuery) {
+    var deferred = Q.defer();
+
+    var clientCtx = new SP.ClientContext.get_current();
+    var oList = clientCtx.get_web().get_lists().getByTitle(listTitle);
+    var listItems = oList.getItems(oSPCamlQuery);
+
+    clientCtx.load(listItems);
+    clientCtx.executeQueryAsync(
+        Function.createDelegate(this, function (sender, args) {
+            deferred.resolve(listItems);
+        }),
+        Function.createDelegate(this, function (sender, args) {
+            deferred.reject(args);
+        })
+    );
+
+    return deferred.promise;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>function GetListItems</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope> 
+</snippet>
+

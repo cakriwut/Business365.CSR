@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+var selectedCountry = \$("option:selected", sender).text();
+var uniqueID = \$("#${1:hiddenInputId}").val();
+    
+var selectOptions = \$("#" + uniqueID);
+selectOptions.hide();
+
+if(${2:cityOfCountry} != null)
+{
+	Q.fcall(function() {
+		var cities = ${2:cityOfCountry}[selectedCountry] || [];
+		\$("#" + uniqueID + " option").remove();
+		var html = \$.map(cities, function(item){
+    		return "<option value='" + item + "'>" + item + "</option>";
+    	}).join('');
+    	selectOptions.append(html);
+		selectOptions.show();
+	});	    	
+} 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>citySelectedCountry</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

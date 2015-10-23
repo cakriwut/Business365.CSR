@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+var inputHTML = "<select id='" + uniqueID + "' class='dropdownlist' title='" + fieldTitle + "' onchange='countryOnChange(this);'>";
+\$.each(data, function (idx, item) {
+	inputHTML += "<option value='" + item.name + "' >" + item.name + "</option>";
+   });
+
+inputHTML += "</select>";
+inputHTML += "<div id='" + uniqueID + "_validation'></div>";
+
+\$("#" + uniqueID).replaceWith(inputHTML);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>restCountryList</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+"${1:fieldInternal}": {
+	        "NewForm": ${1:this}CreateOrUpdate,
+	        "EditForm": ${1:this}CreateOrUpdate,
+	        "DisplayForm": ${1:this}Display,
+	        "View": ${1:this}View
+}
+]]></content>
+  <tabTrigger>fieldInternal</tabTrigger>
+  <scope>source.js</scope>
+</snippet>
